@@ -2,7 +2,7 @@
 package com.brakket
 
 import akka.actor.Actor
-
+import scala.util.Random.nextFloat
 import akka.actor.typed.ActorRef
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.Behavior
@@ -14,9 +14,17 @@ case class Team(name: String, seed: Int)
 
 object GameSimulation {
 
-  // TODO simulate the result of this
-  def simulateGameResult(team1: Team, team2: Team) = team1
-
+  // logic for simulating the winner of the game
+  def simulateGameResult(first: Team, second: Team): Team = {
+    // val probFirstWins = seedProbs(first.seed)(second.seed)
+    val probFirstWins = 0.5
+    val sample = nextFloat
+    val winningTeam = if(sample < probFirstWins) first else second
+    val losingTeam = if(sample >= probFirstWins) first else second
+    // log result
+    println(s"${winningTeam.name} beat ${losingTeam.name}!")
+    winningTeam
+  }
 }
 
 
