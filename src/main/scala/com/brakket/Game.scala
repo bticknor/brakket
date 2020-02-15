@@ -1,5 +1,5 @@
 //#full-example
-package com.example
+package com.brakket
 
 import akka.actor.Actor
 
@@ -7,7 +7,6 @@ import akka.actor.typed.ActorRef
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.Behavior
 import akka.actor.typed.scaladsl.Behaviors
-import com.example.GreeterMain.SayHello
 
 
 case class Team(name: String, seed: Int)
@@ -44,8 +43,7 @@ class BracketGame extends Actor {
         // then send that winner as a message to the next game
         // TODO: add current team to set of teams used in simulation
       }
-    }
-     
+    } 
   }
 }
 
