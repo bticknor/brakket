@@ -2,12 +2,10 @@
 package com.brakket
 
 import akka.actor.Actor
-import scala.util.Random.nextFloat
-import akka.actor.typed.ActorRef
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.Behavior
 import akka.actor.typed.scaladsl.Behaviors
-
+import scala.util.Random.nextFloat
 
 case class Team(name: String, seed: Int)
 
@@ -28,6 +26,9 @@ object GameSimulation {
 }
 
 
+// games are actors that contain pointers to the next game
+// TODO: should be using typed actors?
+// TODO: recursively build actors using position
 class BracketGame extends Actor {
 
   case class Winner(team: Team)
@@ -49,7 +50,7 @@ class BracketGame extends Actor {
           teamsReceived.head, team
         )
         // then send that winner as a message to the next game
-        // TODO: add current team to set of teams used in simulation
+        context.parent ! Winner(winner)
       }
     } 
   }
