@@ -29,7 +29,7 @@ object GameSimulation {
 // games are actors that contain pointers to the next game
 // TODO: should be using typed actors?
 // TODO: recursively build actors using position
-class BracketGame extends Actor {
+class Game extends Actor {
 
   case class Winner(team: Team)
 
