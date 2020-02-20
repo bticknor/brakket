@@ -1,4 +1,4 @@
-package com.brakket
+package brakket
 
 import akka.actor.ActorSystem
 import akka.actor.Props
@@ -11,6 +11,8 @@ object Simulation extends App {
 
   // TODO: recursively create actor
   val championshipGame = system.actorOf(Props(new Game("")), "Championship")
- 
+
+  println(regions("rr"))
+
 }
 
