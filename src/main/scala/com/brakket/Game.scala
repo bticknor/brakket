@@ -7,8 +7,9 @@ import akka.actor.typed.Behavior
 import akka.actor.typed.scaladsl.Behaviors
 import scala.util.Random.nextFloat
 import akka.event.Logging
+import akka.actor.Props
 
-
+// Data type for team
 case class Team(name: String, seed: Int)
 
 
@@ -35,7 +36,20 @@ class Game(location: String) extends Actor {
   val log = Logging(context.system, this)
 
   override def preStart() = {
+    // log creation
     log.info(s"created actor at ${location}")
+    // check length of location string 
+    if(location.length == 3) {
+      // TODO update this 
+      println("this is a leaf node")
+    } else {
+      // TODO create actors
+      val childOneL = location + "r"
+      val childOne = context.actorOf(Props(new Game(childOneL)), childOneL)
+      val childTwoL = location + "l"
+      val childTwo = context.actorOf(Props(new Game(childTwoL)), childTwoL)
+      // TODO does this work
+    }
   }
 
   // TODO check position, if at leaf read teams and run simulation

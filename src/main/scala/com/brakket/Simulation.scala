@@ -10,7 +10,7 @@ object Simulation extends App {
   val system = ActorSystem("TournamentSimulation")
 
   // TODO: recursively create actor
-  val championshipGame = system.actorOf(Props(new Game("r")), "Championship")
+  val championshipGame = system.actorOf(Props(new Game("")), "Championship")
  
 }
 
