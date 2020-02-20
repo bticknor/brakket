@@ -6,6 +6,8 @@ import akka.actor.typed.ActorSystem
 import akka.actor.typed.Behavior
 import akka.actor.typed.scaladsl.Behaviors
 import scala.util.Random.nextFloat
+import akka.event.Logging
+
 
 case class Team(name: String, seed: Int)
 
@@ -28,8 +30,16 @@ object GameSimulation {
 
 // games are actors that contain pointers to the next game
 // TODO: should be using typed actors?
-// TODO: recursively build actors using position
-class Game extends Actor {
+class Game(location: String) extends Actor {
+
+  val log = Logging(context.system, this)
+
+  override def preStart() = {
+    log.info(s"created actor at ${location}")
+  }
+
+  // TODO check position, if at leaf read teams and run simulation
+  // TODO else recursively build child actors
 
   case class Winner(team: Team)
 
