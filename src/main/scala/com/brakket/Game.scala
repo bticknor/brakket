@@ -35,28 +35,28 @@ class Game(location: String) extends Actor {
 
   val log = Logging(context.system, this)
 
+  // TODO update this with the correct length
+  val isLeaf = location.length == 3
+
+  // messages that Games send to each other - wraps team
+  case class Winner(team: Team)
+
   override def preStart() = {
     // log creation
-    log.info(s"created actor at ${location}")
+    log.info(s"created Game at ${location}")
     // check length of location string 
-    if(location.length == 3) {
-      // TODO update this 
-      println("this is a leaf node")
+    if(isLeaf) {
+      // TODO update this - read teams from disk and send message to parent game
+      println(s"leaf node at location ${location}")
     } else {
-      // TODO create actors
+      // we aren't a leaf, create child actors
       val childOneL = location + "r"
       val childOne = context.actorOf(Props(new Game(childOneL)), childOneL)
       val childTwoL = location + "l"
       val childTwo = context.actorOf(Props(new Game(childTwoL)), childTwoL)
-      // TODO does this work
     }
   }
-
-  // TODO check position, if at leaf read teams and run simulation
-  // TODO else recursively build child actors
-
-  case class Winner(team: Team)
-
+ 
   def receive = active(Set.empty[Team])
 
   // our internal state is the set of winning teams we've received from prior games 
@@ -79,6 +79,4 @@ class Game(location: String) extends Actor {
     } 
   }
 }
-
-
 
