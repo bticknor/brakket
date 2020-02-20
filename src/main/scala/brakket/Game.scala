@@ -66,6 +66,8 @@ class Game(location: String) extends Actor {
       context.parent ! Winner(winningTeam)
     } else {
       // we aren't a leaf, create child actors
+      // TODO: don't do this in prestart, when the message comes back
+      // self hasn't started yet!
       val childOneL = location + "r"
       val childOne = context.actorOf(Props(new Game(childOneL)), childOneL)
       val childTwoL = location + "l"
