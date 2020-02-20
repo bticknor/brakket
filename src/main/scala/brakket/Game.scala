@@ -45,8 +45,6 @@ class Game(location: String) extends Actor {
     log.info(s"created Game at ${location}")
     // check length of location string 
     if(isLeaf) {
-      // TODO update this - read teams from disk and send message to parent game
-      println(s"leaf node at location ${location}")
       // get region of this game based on location "head"
       val region = regions(location.take(2))
       // get seed tuple based on location "tail"
@@ -75,10 +73,9 @@ class Game(location: String) extends Actor {
     }  
   }
 
-  val childOneL = location + "r"
-  val childOne = context.actorOf(Props(new Game(childOneL)), childOneL)
-  val childTwoL = location + "l"
-  val childTwo = context.actorOf(Props(new Game(childTwoL)), childTwoL)  
+  override def postStop() = {
+    log.info(s"stopped Game at ${location}")
+  }
 
   def receive = active(Set.empty[Team])
 
