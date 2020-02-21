@@ -21,8 +21,6 @@ object GameSimulation {
     val sample = nextFloat
     val winningTeam = if(sample < probFirstWins) first else second
     val losingTeam = if(sample >= probFirstWins) first else second
-    // log result
-    println(s"${winningTeam.name} beat ${losingTeam.name}!")
     winningTeam
   }
 }
@@ -62,17 +60,17 @@ class Game(location: String) extends Actor {
       val winningTeam = GameSimulation.simulateGameResult(
         teamOne, teamTwo
       )
+      log.info(s"${winningTeam.name} won!")
       // send the message of the winning team to the parent
-      context.parent ! Winner(winningTeam)
+//      println("parent is here:")
+ //     println(context.parent)
+//      context.parent ! Winner(winningTeam)
     } else {
-      // we aren't a leaf, create child actors
-      // TODO: don't do this in prestart, when the message comes back
-      // self hasn't started yet!
       val childOneL = location + "r"
       val childOne = context.actorOf(Props(new Game(childOneL)), childOneL)
       val childTwoL = location + "l"
       val childTwo = context.actorOf(Props(new Game(childTwoL)), childTwoL)
-    }  
+    }
   }
 
   override def postStop() = {
