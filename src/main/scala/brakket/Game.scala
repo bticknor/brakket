@@ -35,9 +35,6 @@ class Game(location: String) extends Actor {
   // TODO update this with the correct length
   val isLeaf = location.length == 5
 
-  // messages that Games send to each other - wraps team
-  case class Winner(team: Team)
-
   override def preStart() = {
     // log creation
     log.info(s"created Game at ${location}")
@@ -62,9 +59,8 @@ class Game(location: String) extends Actor {
       )
       log.info(s"${winningTeam.name} won!")
       // send the message of the winning team to the parent
-//      println("parent is here:")
- //     println(context.parent)
-//      context.parent ! Winner(winningTeam)
+//      context.parent ! "sup"
+      context.parent ! winningTeam
     } else {
       val childOneL = location + "r"
       val childOne = context.actorOf(Props(new Game(childOneL)), childOneL)
@@ -77,26 +73,31 @@ class Game(location: String) extends Actor {
     log.info(s"stopped Game at ${location}")
   }
 
-  def receive = active(Set.empty[Team])
+  def receive = {
+    case Team(name, seed) => log.info(name)
+    case _ => log.info("got message, don't know what to do")
+  }
+
+  //def receive = active(Set.empty[Team])
 
   // our internal state is the set of winning teams we've received from prior games 
-  def active(teamsReceived: Set[Team]): Receive = {
+//  def active(teamsReceived: Set[Team]): Receive = {
     // if we have already received the other winner, simulate the game with the
     // received team
-    case Winner(team) => {
-      if(teamsReceived.size == 0) {
+ //   case Winner(team) => {
+  //    if(teamsReceived.size == 0) {
         // if we haven't received the other winner yet
         // we add the winner we've received into the teams buffer
-        context become active(teamsReceived + team)
-      } else {
+   //     context become active(teamsReceived + team)
+    //  } else {
         // if we have received the other winner, simulate that team vs. the received team
-        val winner = GameSimulation.simulateGameResult(
-          teamsReceived.head, team
-        )
+     //   val winner = GameSimulation.simulateGameResult(
+      //    teamsReceived.head, team
+       // )
         // then send that winner as a message to the next game
-        context.parent ! Winner(winner)
-      }
-    } 
-  }
+       // context.parent ! Winner(winner)
+      //}
+   // } 
+ // }
 }
 
