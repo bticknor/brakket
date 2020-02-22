@@ -17,6 +17,10 @@ object GameSimulation {
   // logic for simulating the winner of the game
   def simulateGameResult(first: Team, second: Team): (Team, Team) = {
     // val probFirstWins = seedProbs(first.seed)(second.seed)
+
+    // if the  
+    
+    
     val probFirstWins = 0.5
     val sample = nextFloat
     val winningTeam = if(sample < probFirstWins) first else second
