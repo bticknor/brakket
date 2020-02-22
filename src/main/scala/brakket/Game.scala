@@ -73,31 +73,32 @@ class Game(location: String) extends Actor {
     log.info(s"stopped Game at ${location}")
   }
 
-  def receive = {
-    case Team(name, seed) => log.info(name)
-    case _ => log.info("got message, don't know what to do")
-  }
+//  def receive = {
+//    case Team(name, seed) => log.info(s"got ${name}")
+//    case _ => log.info("got message, don't know what to do")
+//  }
 
-  //def receive = active(Set.empty[Team])
+  def receive = active(Set.empty[Team])
 
   // our internal state is the set of winning teams we've received from prior games 
-//  def active(teamsReceived: Set[Team]): Receive = {
-    // if we have already received the other winner, simulate the game with the
+  def active(teamsReceived: Set[Team]): Receive = {
+    //if we have already received the other winner, simulate the game with the
     // received team
- //   case Winner(team) => {
-  //    if(teamsReceived.size == 0) {
+    case Team(name, seed) => {
+      if(teamsReceived.size == 0) {
         // if we haven't received the other winner yet
         // we add the winner we've received into the teams buffer
-   //     context become active(teamsReceived + team)
-    //  } else {
+        // TODO: are we re-instantiating it here?
+        context become active(teamsReceived + Team(name, seed))
+      } else {
         // if we have received the other winner, simulate that team vs. the received team
-     //   val winner = GameSimulation.simulateGameResult(
-      //    teamsReceived.head, team
-       // )
+        val winningTeam = GameSimulation.simulateGameResult(
+          teamsReceived.head, Team(name, seed) 
+        )
         // then send that winner as a message to the next game
-       // context.parent ! Winner(winner)
-      //}
-   // } 
- // }
+        context.parent ! winningTeam 
+      }
+    } 
+ }
 }
 
