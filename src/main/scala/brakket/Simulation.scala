@@ -15,7 +15,8 @@ object Simulation extends App {
     Props(new Game("")), "Championship"
   )
 
-  // tear down the championship actor and exit gracefully
-  // TODO
+  // tear down the championship actor and system
+  system.stop(championshipGame)
+  system.terminate
 }
 
