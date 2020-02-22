@@ -81,10 +81,12 @@ class Game(location: String) extends Actor {
     //if we have already received the other winner, simulate the game with the
     // received team
     case Team(name, seed) => {
+      // send shut down signal to sender once we've received a team from them
+      context.stop(sender)
       if(teamsReceived.size == 0) {
         // if we haven't received the other winner yet
         // we add the winner we've received into the teams buffer
-        // TODO: are we re-instantiating it here?
+        // TODO: are we re-instantiating it here? 
         context become active(teamsReceived + Team(name, seed))
       } else {
         // if we have received the other winner, simulate that team vs. the received team
