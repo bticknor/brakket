@@ -6,7 +6,7 @@ import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.fasterxml.jackson.module.scala.experimental.ScalaObjectMapper
 
 
-package object simulation {
+package object brakket {
   val greeting = "welcome to March Madness simulation!"
  
   def loadRegion(filePath: String): Map[String, Object] = {
