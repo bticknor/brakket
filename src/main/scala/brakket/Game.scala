@@ -15,16 +15,15 @@ case class Team(name: String, seed: String)
 object GameSimulation {
 
   // logic for simulating the winner of the game
-  def simulateGameResult(first: Team, second: Team): Team = {
+  def simulateGameResult(first: Team, second: Team): (Team, Team) = {
     // val probFirstWins = seedProbs(first.seed)(second.seed)
     val probFirstWins = 0.5
     val sample = nextFloat
     val winningTeam = if(sample < probFirstWins) first else second
     val losingTeam = if(sample >= probFirstWins) first else second
-    winningTeam
+    (winningTeam, losingTeam)
   }
 }
-
 
 // games are actors that contain pointers to the next game
 // TODO: should be using typed actors?
@@ -32,8 +31,10 @@ class Game(location: String) extends Actor {
 
   val log = Logging(context.system, this)
 
-  // TODO update this with the correct length
+  // Game is aware of whether it is the championship
+  // or a leaf game based on it's position
   val isLeaf = location.length == 5
+  val isChampionship = location.length == 0
 
   override def preStart() = {
     // log creation
@@ -54,10 +55,10 @@ class Game(location: String) extends Actor {
       val teamOne = Team(teamOneName, teamOneSeed)
       val teamTwo = Team(teamTwoName, teamTwoSeed)
       // run the simulation
-      val winningTeam = GameSimulation.simulateGameResult(
+      val (winningTeam, losingTeam) = GameSimulation.simulateGameResult(
         teamOne, teamTwo
       )
-      log.info(s"${winningTeam.name} won!")
+      log.info(s"${winningTeam.name} beat ${losingTeam.name}!")
       // send the message of the winning team to the parent
 //      context.parent ! "sup"
       context.parent ! winningTeam
@@ -73,11 +74,6 @@ class Game(location: String) extends Actor {
     log.info(s"stopped Game at ${location}")
   }
 
-//  def receive = {
-//    case Team(name, seed) => log.info(s"got ${name}")
-//    case _ => log.info("got message, don't know what to do")
-//  }
-
   def receive = active(Set.empty[Team])
 
   // our internal state is the set of winning teams we've received from prior games 
@@ -92,12 +88,16 @@ class Game(location: String) extends Actor {
         context become active(teamsReceived + Team(name, seed))
       } else {
         // if we have received the other winner, simulate that team vs. the received team
-        val winningTeam = GameSimulation.simulateGameResult(
+        val (winningTeam, losingTeam) = GameSimulation.simulateGameResult(
           teamsReceived.head, Team(name, seed) 
         )
+        log.info(s"${winningTeam.name} beat ${losingTeam.name}")
         // then send that winner as a message to the next game
+        // if we are not the championship
+        if(!isChampionship) { 
         context.parent ! winningTeam 
-      }
+        }
+    }
     } 
  }
 }

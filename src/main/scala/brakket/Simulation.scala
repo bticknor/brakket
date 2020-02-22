@@ -9,10 +9,12 @@ object Simulation extends App {
   // actor system for simulation
   val system = ActorSystem("TournamentSimulation")
 
-  // TODO: recursively create actor
-  val championshipGame = system.actorOf(Props(new Game("")), "Championship")
+  // build the championship game, the root of the tournament
+  // that recursively builds the tree in preStart()
+  val championshipGame = system.actorOf(
+    Props(new Game("")), "Championship"
+  )
 
-  println(regions("rr"))
-
+  // TODO: tear down actor system somehow!
 }
 
