@@ -14,9 +14,5 @@ object Simulation extends App {
   val championshipGame = system.actorOf(
     Props(new Game("")), "Championship"
   )
-
-  // tear down the championship actor and system
-  system.stop(championshipGame)
-  system.terminate
 }
 
