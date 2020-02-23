@@ -45,6 +45,7 @@ package object brakket {
 
   // read in probabilities of seeds winning
   // TODO: seeds are ints or strings?
+  // TODO: clean this up
   // higher seeds win by default when playing lower seeds and we don't have
   // data
   val defaultHigherSeedProb: Double = 1.000
@@ -174,7 +175,31 @@ package object brakket {
       14 -> 1.000,
       15 -> 1.000,
       16 -> defaultHigherSeedProb
-    ) 
-  )
-   
+    ),
+    11 -> Map(
+      12 -> defaultHigherSeedProb,
+      13 -> defaultHigherSeedProb,
+      14 -> 1.000,
+      15 -> defaultHigherSeedProb,
+      16 -> defaultHigherSeedProb
+    ),
+    12 -> Map(
+      13 -> 0.750,
+      14 -> defaultHigherSeedProb,
+      15 -> defaultHigherSeedProb,
+      16 -> defaultHigherSeedProb
+    ),
+    13 -> Map(
+      14 -> defaultHigherSeedProb,
+      15 -> defaultHigherSeedProb,
+      16 -> defaultHigherSeedProb
+    ),
+    14 -> Map(
+      15 -> defaultHigherSeedProb,
+      16 -> defaultHigherSeedProb
+    ),
+    15 -> Map(
+      16 -> defaultHigherSeedProb
+    )
+  ) 
 }

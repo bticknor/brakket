@@ -18,10 +18,20 @@ object GameSimulation {
   def simulateGameResult(first: Team, second: Team): (Team, Team) = {
     // val probFirstWins = seedProbs(first.seed)(second.seed)
 
-    // if the  
+    // if the 
+    // TODO: clean this up
+    val firstSeed = first.seed.toInt
+    val secondSeed = second.seed.toInt
     
-    
-    val probFirstWins = 0.5
+    val probFirstWins: Double = (firstSeed, secondSeed) match {
+      // if equal seeds, probability of one winning is 50%
+      case (a, b) if a == b => 0.5
+      // if a is the lower seed (higher number)
+      case (a, b) if a > b => 1 - probSeedWins(b)(a) 
+      // if b is the lower seed (higher number)
+      case (a, b) if a < b => probSeedWins(a)(b)
+    }
+
     val sample = nextFloat
     val winningTeam = if(sample < probFirstWins) first else second
     val losingTeam = if(sample >= probFirstWins) first else second
@@ -64,7 +74,6 @@ class Game(location: String) extends Actor {
       )
       log.info(s"${winningTeam.name} beat ${losingTeam.name}!")
       // send the message of the winning team to the parent
-//      context.parent ! "sup"
       context.parent ! winningTeam
     } else {
       val childOneL = location + "r"
@@ -99,12 +108,15 @@ class Game(location: String) extends Actor {
         )
         log.info(s"${winningTeam.name} beat ${losingTeam.name}")
         // then send that winner as a message to the next game
-        // if we are not the championship
+        // if we are not the championship, send our winner to parent
         if(!isChampionship) { 
         context.parent ! winningTeam 
+        } else {
+          // if we are the championship game and have finished, terminate the system
+          context.system.terminate
         }
-    }
+      }
     } 
- }
+  }
 }
 
