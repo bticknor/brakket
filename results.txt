@@ -1,0 +1,63 @@
+[2021-03-17 10:24:52,527] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-16] [akka://TournamentSimulation/user/Championship/l/lr/lrl/lrlr/lrlrr] - Texas Tech beat Utah State!
+[2021-03-17 10:24:52,527] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-16] [akka://TournamentSimulation/user/Championship/r/rl/rlr/rlrl/rlrlr] - UCSB beat Creighton!
+[2021-03-17 10:24:52,527] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-16] [akka://TournamentSimulation/user/Championship/r/rl/rlr/rlrr/rlrrr] - Gonzaga beat Norfolk State/App State!
+[2021-03-17 10:24:52,528] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-16] [akka://TournamentSimulation/user/Championship/r/rr/rrr/rrrr/rrrrr] - Michigan beat Mt. St. Mary's / Texas Southern!
+[2021-03-17 10:24:52,528] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-16] [akka://TournamentSimulation/user/Championship/r/rr/rrl/rrlr/rrlrr] - BYU beat Michigan State / UCLA!
+[2021-03-17 10:24:52,528] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-16] [akka://TournamentSimulation/user/Championship/l/lr/lrr/lrrr/lrrrl] - North Carolina beat Wisconsin!
+[2021-03-17 10:24:52,528] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-16] [akka://TournamentSimulation/user/Championship/r/rl/rlr/rlrr/rlrrl] - Oklahoma beat Missouri!
+[2021-03-17 10:24:52,528] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-16] [akka://TournamentSimulation/user/Championship/r/rl/rll/rllr/rllrr] - USC beat Wichita State / Drake!
+[2021-03-17 10:24:52,528] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-16] [akka://TournamentSimulation/user/Championship/l/lr/lrr/lrrr/lrrrr] - Baylor beat Hartford!
+[2021-03-17 10:24:52,528] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-16] [akka://TournamentSimulation/user/Championship/l/ll/llr/llrr/llrrr] - Illinois beat Drexel!
+[2021-03-17 10:24:52,529] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-16] [akka://TournamentSimulation/user/Championship/r/rl/rll/rllr/rllrl] - Kansas beat Eastern Washington!
+[2021-03-17 10:24:52,529] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-7] [akka://TournamentSimulation/user/Championship/r/rl/rll/rlll/rllll] - Iowa beat Grand Canyon!
+[2021-03-17 10:24:52,529] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-7] [akka://TournamentSimulation/user/Championship/l/lr/lrr/lrrl/lrrll] - Purdue beat North Texas!
+[2021-03-17 10:24:52,529] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-7] [akka://TournamentSimulation/user/Championship/r/rr/rrl/rrlr/rrlrl] - Abilene Christian beat Texas!
+[2021-03-17 10:24:52,529] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-7] [akka://TournamentSimulation/user/Championship/l/lr/lrr/lrrl/lrrlr] - Villanova beat Winthrop!
+[2021-03-17 10:24:52,529] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-7] [akka://TournamentSimulation/user/Championship/r/rl/rlr/rlrl/rlrll] - Ohio beat Virginia!
+[2021-03-17 10:24:52,529] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-7] [akka://TournamentSimulation/user/Championship/l/lr/lrl/lrlr/lrlrl] - Arkansas beat Colgate!
+[2021-03-17 10:24:52,530] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-7] [akka://TournamentSimulation/user/Championship/l/ll/llr/llrr/llrrl] - Loyola Chicago beat Georgia Tech!
+[2021-03-17 10:24:52,530] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-7] [akka://TournamentSimulation/user/Championship/r/rr/rrr/rrrr/rrrrl] - St. Bonaventure beat LSU!
+[2021-03-17 10:24:52,530] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-7] [akka://TournamentSimulation/user/Championship/r/rl/rll/rlll/rlllr] - Oregon beat VCU!
+[2021-03-17 10:24:52,530] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-7] [akka://TournamentSimulation/user/Championship/r/rr/rrr/rrrl/rrrlr] - Georgetown beat Colorado!
+[2021-03-17 10:24:52,530] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-7] [akka://TournamentSimulation/user/Championship/l/ll/llr/llrl/llrlr] - Oregon State beat Tennessee!
+[2021-03-17 10:24:52,530] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-7] [akka://TournamentSimulation/user/Championship/r/rr/rrl/rrll/rrllr] - Uconn beat Maryland!
+[2021-03-17 10:24:52,530] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-7] [akka://TournamentSimulation/user/Championship/l/lr/lrl/lrll/lrllr] - Florida beat Virginia Tech!
+[2021-03-17 10:24:52,531] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-10] [akka://TournamentSimulation/user/Championship/r/rr/rrr/rrrl/rrrll] - Florida State beat UNC Greensboro!
+[2021-03-17 10:24:52,531] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-10] [akka://TournamentSimulation/user/Championship/l/ll/llr/llrl/llrll] - Oklahoma State beat Liberty!
+[2021-03-17 10:24:52,531] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-10] [akka://TournamentSimulation/user/Championship/r/rr/rrl/rrll/rrlll] - Alabama beat Iona!
+[2021-03-17 10:24:52,531] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-10] [akka://TournamentSimulation/user/Championship/l/lr/lrl/lrll/lrlll] - Ohio St. beat Oral Roberts!
+[2021-03-17 10:24:52,531] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-10] [akka://TournamentSimulation/user/Championship/l/ll/lll/lllr/lllrr] - San Diego State beat Syracuse!
+[2021-03-17 10:24:52,531] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-10] [akka://TournamentSimulation/user/Championship/l/ll/lll/lllr/lllrl] - West Virginia beat Morehead State!
+[2021-03-17 10:24:52,531] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-12] [akka://TournamentSimulation/user/Championship/l/lr/lrr/lrrr] - Baylor beat North Carolina
+[2021-03-17 10:24:52,531] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-12] [akka://TournamentSimulation/user/Championship/l/lr/lrl/lrlr] - Arkansas beat Texas Tech
+[2021-03-17 10:24:52,531] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-12] [akka://TournamentSimulation/user/Championship/l/lr/lrr/lrrl] - Purdue beat Villanova
+[2021-03-17 10:24:52,531] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-12] [akka://TournamentSimulation/user/Championship/r/rl/rll/rllr] - USC beat Kansas
+[2021-03-17 10:24:52,531] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-12] [akka://TournamentSimulation/user/Championship/r/rr/rrr/rrrr] - Michigan beat St. Bonaventure
+[2021-03-17 10:24:52,532] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-10] [akka://TournamentSimulation/user/Championship/r/rr/rrr/rrrl] - Georgetown beat Florida State
+[2021-03-17 10:24:52,532] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-10] [akka://TournamentSimulation/user/Championship/r/rl/rll/rlll] - Oregon beat Iowa
+[2021-03-17 10:24:52,532] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-10] [akka://TournamentSimulation/user/Championship/r/rl/rlr/rlrr] - Oklahoma beat Gonzaga
+[2021-03-17 10:24:52,532] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-10] [akka://TournamentSimulation/user/Championship/l/ll/lll/llll/llllr] - Clemson beat Rutgers!
+[2021-03-17 10:24:52,532] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-12] [akka://TournamentSimulation/user/Championship/r/rr/rrl/rrlr] - Abilene Christian beat BYU
+[2021-03-17 10:24:52,532] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-12] [akka://TournamentSimulation/user/Championship/l/lr/lrl/lrll] - Florida beat Ohio St.
+[2021-03-17 10:24:52,532] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-12] [akka://TournamentSimulation/user/Championship/r/rl/rlr/rlrl] - UCSB beat Ohio
+[2021-03-17 10:24:52,532] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-12] [akka://TournamentSimulation/user/Championship/l/ll/lll/llll/lllll] - Houston beat Cleveland State!
+[2021-03-17 10:24:52,532] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-12] [akka://TournamentSimulation/user/Championship/r/rr/rrl/rrll] - Uconn beat Alabama
+[2021-03-17 10:24:52,532] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-12] [akka://TournamentSimulation/user/Championship/l/ll/llr/llrr] - Illinois beat Loyola Chicago
+[2021-03-17 10:24:52,532] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-12] [akka://TournamentSimulation/user/Championship/l/ll/llr/llrl] - Oklahoma State beat Oregon State
+[2021-03-17 10:24:52,533] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-12] [akka://TournamentSimulation/user/Championship/l/ll/lll/lllr] - San Diego State beat West Virginia
+[2021-03-17 10:24:52,533] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-12] [akka://TournamentSimulation/user/Championship/l/ll/lll/llll] - Houston beat Clemson
+[2021-03-17 10:24:52,534] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-15] [akka://TournamentSimulation/user/Championship/l/ll/llr] - Illinois beat Oklahoma State
+[2021-03-17 10:24:52,534] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-11] [akka://TournamentSimulation/user/Championship/r/rl/rll] - Oregon beat USC
+[2021-03-17 10:24:52,534] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-11] [akka://TournamentSimulation/user/Championship/l/lr/lrl] - Arkansas beat Florida
+[2021-03-17 10:24:52,534] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-11] [akka://TournamentSimulation/user/Championship/r/rr/rrr] - Michigan beat Georgetown
+[2021-03-17 10:24:52,534] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-11] [akka://TournamentSimulation/user/Championship/r/rl/rlr] - UCSB beat Oklahoma
+[2021-03-17 10:24:52,534] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-11] [akka://TournamentSimulation/user/Championship/r/rl] - Oregon beat UCSB
+[2021-03-17 10:24:52,535] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-15] [akka://TournamentSimulation/user/Championship/r/rr/rrl] - Uconn beat Abilene Christian
+[2021-03-17 10:24:52,535] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-11] [akka://TournamentSimulation/user/Championship/l/lr/lrr] - Baylor beat Purdue
+[2021-03-17 10:24:52,535] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-11] [akka://TournamentSimulation/user/Championship/l/ll/lll] - San Diego State beat Houston
+[2021-03-17 10:24:52,536] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-15] [akka://TournamentSimulation/user/Championship/r/rr] - Michigan beat Uconn
+[2021-03-17 10:24:52,536] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-15] [akka://TournamentSimulation/user/Championship/l/ll] - San Diego State beat Illinois
+[2021-03-17 10:24:52,536] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-11] [akka://TournamentSimulation/user/Championship/r] - Michigan beat Oregon
+[2021-03-17 10:24:52,536] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-11] [akka://TournamentSimulation/user/Championship/l/lr] - Arkansas beat Baylor
+[2021-03-17 10:24:52,536] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-11] [akka://TournamentSimulation/user/Championship/l] - San Diego State beat Arkansas
+[2021-03-17 10:24:52,536] [INFO] [brakket.Game] [TournamentSimulation-akka.actor.default-dispatcher-11] [akka://TournamentSimulation/user/Championship] - Michigan beat San Diego State
