@@ -18,16 +18,16 @@ object GameSimulation {
   def simulateGameResult(first: Team, second: Team): (Team, Team) = {
     // val probFirstWins = seedProbs(first.seed)(second.seed)
 
-    // if the 
+    // if the
     // TODO: clean this up
     val firstSeed = first.seed.toInt
     val secondSeed = second.seed.toInt
-    
+
     val probFirstWins: Double = (firstSeed, secondSeed) match {
       // if equal seeds, probability of one winning is 50%
       case (a, b) if a == b => 0.5
       // if a is the lower seed (higher number)
-      case (a, b) if a > b => 1 - probSeedWins(b)(a) 
+      case (a, b) if a > b => 1 - probSeedWins(b)(a)
       // if b is the lower seed (higher number)
       case (a, b) if a < b => probSeedWins(a)(b)
     }
@@ -53,7 +53,7 @@ class Game(location: String) extends Actor {
   override def preStart() = {
     // log creation
     log.info(s"created Game at ${location}")
-    // check length of location string 
+    // check length of location string
     if(isLeaf) {
       // get region of this game based on location "head"
       val region = regions(location.take(2))
@@ -89,7 +89,7 @@ class Game(location: String) extends Actor {
 
   def receive = active(Set.empty[Team])
 
-  // our internal state is the set of winning teams we've received from prior games 
+  // our internal state is the set of winning teams we've received from prior games
   def active(teamsReceived: Set[Team]): Receive = {
     //if we have already received the other winner, simulate the game with the
     // received team
@@ -99,24 +99,23 @@ class Game(location: String) extends Actor {
       if(teamsReceived.size == 0) {
         // if we haven't received the other winner yet
         // we add the winner we've received into the teams buffer
-        // TODO: are we re-instantiating it here? 
+        // TODO: are we re-instantiating it here?
         context become active(teamsReceived + Team(name, seed))
       } else {
         // if we have received the other winner, simulate that team vs. the received team
         val (winningTeam, losingTeam) = GameSimulation.simulateGameResult(
-          teamsReceived.head, Team(name, seed) 
+          teamsReceived.head, Team(name, seed)
         )
         log.info(s"${winningTeam.name} beat ${losingTeam.name}")
         // then send that winner as a message to the next game
         // if we are not the championship, send our winner to parent
-        if(!isChampionship) { 
-        context.parent ! winningTeam 
+        if(!isChampionship) {
+        context.parent ! winningTeam
         } else {
           // if we are the championship game and have finished, terminate the system
           context.system.terminate
         }
       }
-    } 
+    }
   }
 }
-

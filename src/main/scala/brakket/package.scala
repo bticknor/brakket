@@ -1,35 +1,14 @@
-import scala.io.Source
-import scala.io._
-import java.io._
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import com.fasterxml.jackson.module.scala.experimental.ScalaObjectMapper
 
 package object brakket {
   val greeting = "welcome to March Madness simulation!"
- 
-  def loadRegion(filePath: String): Map[String, Object] = {
-    // load region from json file into map 
-    val json = Source.fromURL(getClass.getResource(filePath))
-    val mapper = new ObjectMapper() with ScalaObjectMapper
-    mapper.registerModule(DefaultScalaModule)
-    val parsedJson = mapper.readValue[Map[String, Object]](json.reader())
-    parsedJson
-  }
-
-  // load in region seed data
-  val westRegion = loadRegion("/west.json")
-  val eastRegion = loadRegion("/east.json")
-  val southRegion = loadRegion("/south.json")
-  val midwestRegion = loadRegion("/midwest.json")
 
   // maps the beginning of a leaf nodes location string
   // to the region of that nodes Game
-  val regions: Map[String, Map[String, Object]] = Map(
-    "rr" -> eastRegion,
-    "rl" -> westRegion,
-    "lr" -> southRegion,
-    "ll" -> midwestRegion
+  val regions: Map[String, Map[String, String]] = Map(
+    "rr" -> Seeds.eastRegion,
+    "rl" -> Seeds.westRegion,
+    "lr" -> Seeds.southRegion,
+    "ll" -> Seeds.midwestRegion
   )
   // static map from bracket locations to seeds
   val regionLocationsToSeeds: Map[String, (String, String)] = Map(
@@ -98,7 +77,7 @@ package object brakket {
       14 -> 0.850,
       15 -> 1.000,
       16 -> defaultHigherSeedProb
-    ), 
+    ),
     4 -> Map(
       5 -> 0.558,
       6 -> 0.333,
@@ -112,7 +91,7 @@ package object brakket {
       14 -> defaultHigherSeedProb,
       15 -> defaultHigherSeedProb,
       16 -> defaultHigherSeedProb
-    ), 
+    ),
     5 -> Map(
       6 -> 1.000,
       7 -> defaultHigherSeedProb,
@@ -201,5 +180,5 @@ package object brakket {
     15 -> Map(
       16 -> defaultHigherSeedProb
     )
-  ) 
+  )
 }
