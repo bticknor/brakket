@@ -29,6 +29,8 @@ package object brakket {
   // data
   val defaultHigherSeedProb: Double = 1.000
 
+  // these are pulled from this page, which is apparently updated:
+  // https://mcubed.net/ncaab/seeds.shtml
   val probSeedWins: Map[Int, Map[Int, Double]] = Map(
     1 -> Map(
       2 -> 0.545,
