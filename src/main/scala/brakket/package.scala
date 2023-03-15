@@ -6,9 +6,9 @@ package object brakket {
   // to the region of that nodes Game
   val regions: Map[String, Map[String, String]] = Map(
     "rr" -> Seeds.eastRegion,
-    "rl" -> Seeds.westRegion,
-    "lr" -> Seeds.southRegion,
-    "ll" -> Seeds.midwestRegion
+    "rl" -> Seeds.southRegion,
+    "lr" -> Seeds.midwestRegion,
+    "ll" -> Seeds.westRegion
   )
   // static map from bracket locations to seeds
   val regionLocationsToSeeds: Map[String, (String, String)] = Map(
